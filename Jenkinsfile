@@ -22,5 +22,11 @@ pipeline {
               sh "terraform apply -auto-approve"
             }
         }
+       stage('destroy'){
+            steps{
+              echo "ready to create your infrastructure in the cloud"
+              sh "terraform destroy -auto-approve"
+            }
+        }
     }
 }

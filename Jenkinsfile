@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-              sh "terraform plan"
+              sh "terraform init"
             }
         }
         stage('Test') { 
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('package') { 
             steps {
-                sh " terraform version " 
+                sh " terraform plan " 
             }
         }
         stage('deploy'){
